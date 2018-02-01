@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <meta charset="utf-8" />
+    <title></title>
+    <style >
+       *{
+           margin :0 ;
+           padding:0;
+       }
+
+        .max {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url(image/login背景图.jpg);
+            background-size: 100% 100%;
+        
+        }
+        .loginBlock {
+            width: 448px;
+            height: 252px;
+            margin:0  auto ;
+            margin-top :180px;
+            background: rgba(255, 255, 255, 0.6);
+            filter: Alpha(opacity=60);
+            padding: 60px 140px;
+            border-radius: 7px;
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+            border-bottom-right-radius: 7px;
+            border-bottom-left-radius: 7px;
+            box-shadow: 0px 1px 5px rgba(154, 169, 177, 0.5);
+            position  :relative ;
+              z-index :1;
+      
+        }
+            .loginBlock #txtSearch {
+                width: 400px;
+                height: 50px;
+                margin-left: 20px;
+                border-radius: 5px 5px 5px 5px;
+                margin-bottom :1px;
+                font-size:14px;
+
+            }
+
+            .loginBlock #textpwd {
+                width: 397px;
+                height: 50px;
+                margin-left: 20px;
+                border-radius: 5px 5px 5px 5px;
+                font-size: 14px;
+            }
+           .loginBlock  #ck{
+               width:15px;
+               height:15px;
+               margin-left :20px;
+               margin-top:15px;
+           }
+           .loginBlock  #lblPwd{
+              color :#0094ff;
+             margin-left :200px;
+           }
+            .loginBlock #bntLogin {
+                width: 397px;
+                height: 50px;
+                margin-left: 20px;
+                margin-top :10px;
+                background-color:#0094ff;
+                color :rgba(255, 255, 255, 0.6);
+                font-size :18px;
+            }
+        .loginBlock2 {
+            width: 448px;
+            height: 252px;
+            margin: 0 auto;
+            margin-top: -368px;
+            background: rgba(255, 255, 255, 0.6);
+            filter: Alpha(opacity=60);
+            padding: 60px 140px;
+            border-radius: 7px;
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+            border-bottom-right-radius: 7px;
+            border-bottom-left-radius: 7px;
+            box-shadow: 0px 1px 5px rgba(154, 169, 177, 0.5);
+            position: relative;
+           z-index :-1;
+        }
+            .loginBlock2 #txtSearch2 {
+                width: 400px;
+                height: 50px;
+                margin-left: 20px;
+                border-radius: 5px 5px 5px 5px;
+                margin-bottom :1px;
+                font-size:14px;
+
+            }
+
+            .loginBlock2 #textpwd2 {
+                width: 397px;
+                height: 50px;
+                margin-left: 20px;
+                border-radius: 5px 5px 5px 5px;
+                font-size: 14px;
+            }
+        .loginBlock2 #textpwdes2 {
+            width: 397px;
+            height: 50px;
+            margin-left: 20px;
+            border-radius: 5px 5px 5px 5px;
+            font-size: 14px;
+        }
+            .loginBlock2 #bntLogin2 {
+                width: 397px;
+                height: 50px;
+                margin-left: 20px;
+                margin-top :10px;
+                background-color:#0094ff;
+                color :rgba(255, 255, 255, 0.6);
+                font-size :18px;
+            }
+        .alogin {
+            position: absolute;
+            margin-top: -55px;
+            margin-left: -122px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="max">
+            <div class="loginBlock">
+              
+                    <input type="search" id="txtSearch" placeholder="登陆:" /><br />
+                    <input type="password" id="textpwd" placeholder="密码:" /><br />
+                    <input type="checkbox" id="ck" /><label>下次自动登陆</label><a id="lblPwd">没有账号？</a>
+                    <input type="button" id="bntLogin" value="立即登陆" />
+         
+            </div>
+            <div class="loginBlock2">
+                <div class="alogin">
+                    <a>返回登录页面</a>
+                </div>
+                <input type="search" id="txtSearch2" name="userid" placeholder="账号:" /><br />
+                <input type="password" id="textpwd2" name="pwd" placeholder="密码:" /><br />
+                <input type="search" id="textpwdes2" name="pwds" placeholder="用户名:" /><br />               
+                <input type="button" id="bntLogin2"  value="立即注册" />             
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script >
+   
+        $(".loginBlock  #lblPwd").click(function () {
+         
+           
+            $(".loginBlock").css({ "z-index": "-1" })
+            $(".loginBlock2").css({ "z-index": "1" })
+        } )
+    $(".loginBlock2  .alogin  a").click(function () {
+
+
+        $(".loginBlock2").css({ "z-index": "-1" })
+        $(".loginBlock").css({ "z-index": "1" })
+    })
+</script>
+<script>
+    $("#bntLogin2").click(function () {
+        var userid = $("#txtSearch2").val();
+        var pwd = $("#textpwdes2").val();
+        $.post("Insert.ashx", { userids: userid, pwds: pwd }, function (count) {
+            alert(count);
+            switch (count) {
+                  
+                case "-3":
+                    alert("您输入的账号已经存在!<br/>请重新选择!");
+                    break;
+                case "-2":
+                    alert("数据库连接失败!<br/>请检查您的数据库或联系管理员");
+                    break;
+                case "-1":
+                    alert("数据操作失败!<br/>请检查您输入的数据或联系管理员!");
+                    break;
+                case "0":
+                    alert("注册失败!<br/>请检查输入的数据!");
+                    break;
+                default:
+                    alert("注册成功!");
+                   
+            }
+        })
+
+    });
+
+    $("#bntLogin").click(function () {
+        var UserName = $("#txtSearch").val();
+        var Pwd = $("#textpwd").val();
+        $.post("Login.ashx", { UserNames: UserName, Pwds: Pwd }, function (loginInfo) {
+           // alert(loginInfo);
+            if(loginInfo=="登录成功!")
+                window.location.href = "Default.html";
+         
+        })
+     
+    }
+    )
+  
+</script>

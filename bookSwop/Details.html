@@ -1,0 +1,293 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--width=device-width：布局视口宽度 与 可见视口宽度(即屏幕宽度)相同。
+    初始缩放比例为1
+    最大缩放比例为1
+    不允许用户缩放-->
+    <meta name="viewport" content="
+          width=device-width,
+          intial-scale=1.0,
+          minmum-scale=1.0,
+          maximum-scale=1.0,
+          user-scaleble=no" />  
+    <title></title>
+    <style >
+     
+        .bookDetails {
+            width: 1000px;
+            height: 560px;
+            /*border: solid 1px red;*/
+            margin: 0 auto;
+            margin-bottom :5px;
+        }
+
+        .navigation {
+            width: 330px;
+            height: 20px;
+            /*border: solid 1px #4cff00;*/
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .bookImg {
+            position :relative ;
+            width: 200px;
+            height: 200px;
+            /*border: solid 1px red;*/
+            float: left;
+            margin-top: 20px;
+        }
+            .bookImg img {
+                width   : 100%;
+                height:100%;
+            
+            }
+        .Desc {
+            width: 700px;
+            height: 200px;
+            /*border: solid 1px red;*/
+            float: left;
+            margin-top: 20px;
+            margin-left: 10px;
+            font-family: "微软雅黑";
+            font-size: 14px;
+           text-align :center ;
+        }
+      .Desc  .lable{
+          width:700px;
+          height :50px;
+          margin-top :10px;
+          /*border-bottom :solid  1px red;*/
+      }
+
+
+
+        .banner {
+            width: 1000px;
+            height: 240px;          
+            float: left;
+            border: solid 1px #c8c8c8;
+            border-top :none ;
+            border-bottom :none;
+            margin-bottom:0px;
+        }
+
+            .banner .pic {
+                /*border: solid 1px #558c83;*/
+                width: 1000px;
+                height: 200px;
+                margin: 0px auto;
+                position: relative;
+                overflow: hidden;             
+                cursor: pointer;
+            }
+
+                .banner .pic ul {
+                    width: 1000%;
+                    margin-left: -1000px;
+                }
+
+                    .banner .pic ul li {
+                        float: left;
+                        margin-top: 30px;
+                        margin-right: 50px;
+                        margin-left: 25px;
+                       
+                    }
+                        .banner .pic ul li img {
+                            width: 130px;
+                            height: 130px;
+                        }
+                        .banner .tab ul {
+                            width: 65px;
+                            height: 15px;
+                            /*border: solid 1px red;*/
+                            /*position: absolute;*/
+                            left: 50%;
+                            margin-left: 467.5px;
+                            margin-top: 0px;
+                        }
+
+                  .banner  .tab  ul  li{
+                    cursor: pointer;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 100%;
+                    background: #D2D2D2;
+                    float: left;
+                    margin: 3px 3px;
+                    
+                }
+
+              .banner  .btn  div {
+                position: absolute;
+                width: 25px;
+                height: 50px;
+                background-color: #c8c8c8;
+                color: #ffffff;
+                font-size: 30px;
+                text-align: center;
+                line-height: 50px;
+                top: 40%;
+                cursor: pointer;
+            }
+
+              .banner .btn #leftBtn{
+                left: 0%;
+            }
+
+             .banner  .btn #rightBtn {
+                right: 0%;
+            }
+
+             .banner  .tab ul li.onA {
+                background: #558c83;
+            }
+
+          .banner  .pic ul li label {
+            margin-top: 30px;
+            margin-left: 15px;
+            font-size: 14px;
+        }
+
+            .banner .btn div.hover {
+                background: rgba(0,0,0,0.6);
+            }
+            .recommend{
+                width:1000px;
+                height :40px;
+                margin: 0  auto ;
+                background-color :#F5F5F5;                            
+                line-height:40px;
+                margin-top :12px;
+                border : solid  1px #c8c8c8;
+               border-bottom :none ;
+            }
+            .recommend  label {
+                margin-left:70px;
+            }
+            .imgfx{
+                 position :absolute  ;
+                 left :50%;
+                 margin-left :-30px;            
+            }
+        .hint {
+            width: 700px;
+            height: 30px;
+            margin: 0 auto;
+            margin-top: 220px;
+            color: #999;
+            /*border: solid 1px #4cff00;*/
+            line-height :30px;
+            margin-left :218px;
+        }
+       
+
+      
+    </style>
+</head>
+<body>
+    <form ng-app="appDemo" ng-controller="ctrlDemo">
+        <div ng-include='"masterHead.html"'></div>
+        <div class="bookDetails">
+
+            <div class="navigation">
+                <label>图书</label><span> ></span><label style="   color:#646464;font-size :14px;">成功/励志</label><span> ></span> <label style="   color:#646464;font-size :14px;">你的能力</label>
+            </div>
+            <div class="bookImg">
+                <img src="image/好评最多5.jpg" />
+                <div class="imgfx">
+                    <img src="image/分享.png" />
+                </div>
+            </div>
+          
+            <div class="Desc">
+
+                <label style="font-size :16px;font-weight:bolder;">正面管教--修订版</label><br />
+                <div class="lable">
+                    <label>海量用户和收入究竟从哪里来？十几人的小群如何成就独角兽、如何奠定商业帝国的基础？《社交红利》《即时引爆》作者徐志斌历时两年精心力作。援引腾讯、百度、豆瓣平台的核心方法论，深度解析全民K歌、王者荣耀</label>
+                </div>
+
+                作者: <label>图说天下</label>&nbsp;&nbsp;&nbsp;&nbsp; 出版社:<label>吉林大学出版社</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 出版时间:<label>2009-03-01</label>&nbsp;&nbsp;&nbsp;&nbsp;<label>所属分类:</label><label>文学</label><br />
+
+                <div style="margin-top :10px;">
+                    <label style="color:red;">上架人:</label><label style="color:red;">梁林明</label>&nbsp;&nbsp;&nbsp;&nbsp;<a label style="color:red;">联系上架人</a>&nbsp;&nbsp;&nbsp;&nbsp;<a label style="color:red;">加入购物车</a>
+                </div>
+                
+            </div>
+            <div class="hint">
+                <label>温馨提示:本网站为广大网友交换图书不收任何费用,如有喜欢的图书请与上架者自行联系进行交换</label> 
+            </div>
+            <div class="recommend">
+                <label >同类推荐</label>
+            </div>
+            
+            <div class="banner">
+                <div class="pic">
+                    <ul>
+                        <li><img src="image/人气收藏17.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏18.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏19.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏20.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏21.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏2.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏3.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏4.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏5.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏6.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏7.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏8.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏10.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏11.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏12.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏13.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏14.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏15.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏16.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏17.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏18.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏19.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏20.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏21.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏2.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏3.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏4.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏5.jpg" /><br /><label>微反应心理学</label></li>
+                        <li><img src="image/人气收藏6.jpg" /><br /><label>微反应心理学</label></li>
+                    </ul>
+                    <div class="btn">
+                        <div id="leftBtn">&lt;</div>
+                        <div id="rightBtn">&gt;</div>
+                    </div>
+                </div>
+                <div class="tab">
+                    <ul>
+                        <li class="onA"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+       <div ng-include='"masterBottom.html"'></div>
+      
+    </form>
+</body>
+</html>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="angular/angular.js"></script>
+<script src="js/include.js"></script>
+<script src="js/broadcaString.js"></script>
+<script >   
+        var $li = $(".banner  .tab  ul li");
+
+    var $picUl = $(".banner  .pic  ul");
+    var $btn = $(".banner .btn");
+    var $btnDiv = $(".banner .btn div");
+    carousel($li, 'onA', $picUl, '1000', 500, 0, 3000, 'no', $btn, $btnDiv, 'hover', 'no');
+    //$("div").css("border","none");
+</script>

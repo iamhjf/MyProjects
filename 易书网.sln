@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "bookSwop(1)", "bookSwop\", "{439D69C6-9D63-4D5F-BDEF-53D88F8BD207}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		ProjectReferences = "{b6ab266f-cd36-40b4-aeb1-da86a03501fd}|BLL.dll;{01d677a4-36fa-4a4f-a994-a66359e4582a}|Model.dll;{865025B4-D8F0-4605-94B8-7A9AD27C547D}|DAL.dll;{9A19934D-B8B3-469C-A9CB-48BE4BE967E4}|Rule.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_50691"
+		Debug.AspNetCompiler.PhysicalPath = "bookSwop\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50691\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_50691"
+		Release.AspNetCompiler.PhysicalPath = "bookSwop\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50691\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50691"
+		SlnRelativePath = "bookSwop\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{B6AB266F-CD36-40B4-AEB1-DA86A03501FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{865025B4-D8F0-4605-94B8-7A9AD27C547D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{01D677A4-36FA-4A4F-A994-A66359E4582A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rule", "Rule\Rule.csproj", "{9A19934D-B8B3-469C-A9CB-48BE4BE967E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{439D69C6-9D63-4D5F-BDEF-53D88F8BD207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{439D69C6-9D63-4D5F-BDEF-53D88F8BD207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{439D69C6-9D63-4D5F-BDEF-53D88F8BD207}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{439D69C6-9D63-4D5F-BDEF-53D88F8BD207}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{B6AB266F-CD36-40B4-AEB1-DA86A03501FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6AB266F-CD36-40B4-AEB1-DA86A03501FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6AB266F-CD36-40B4-AEB1-DA86A03501FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6AB266F-CD36-40B4-AEB1-DA86A03501FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{865025B4-D8F0-4605-94B8-7A9AD27C547D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{865025B4-D8F0-4605-94B8-7A9AD27C547D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{865025B4-D8F0-4605-94B8-7A9AD27C547D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{865025B4-D8F0-4605-94B8-7A9AD27C547D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01D677A4-36FA-4A4F-A994-A66359E4582A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01D677A4-36FA-4A4F-A994-A66359E4582A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01D677A4-36FA-4A4F-A994-A66359E4582A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01D677A4-36FA-4A4F-A994-A66359E4582A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A19934D-B8B3-469C-A9CB-48BE4BE967E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A19934D-B8B3-469C-A9CB-48BE4BE967E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A19934D-B8B3-469C-A9CB-48BE4BE967E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A19934D-B8B3-469C-A9CB-48BE4BE967E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29D3BFEF-A9E1-4FD7-9A6A-ADDA8FD8ABD7}
+	EndGlobalSection
+EndGlobal

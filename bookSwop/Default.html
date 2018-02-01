@@ -1,0 +1,1441 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--width=device-width：布局视口宽度 与 可见视口宽度(即屏幕宽度)相同。
+    初始缩放比例为1
+    最大缩放比例为1
+    不允许用户缩放-->
+    <meta name="viewport" content="
+          width=device-width,
+          intial-scale=1.0,
+          minmum-scale=1.0,
+          maximum-scale=1.0,
+          user-scaleble=no" />  
+    <title></title>
+    <style>
+        .book {
+            width: 1000px;
+            height: 300px;
+            /*border: solid 1px  #487A6F;*/
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        
+        .bookClassify { 
+            width: 130px;
+            height: 302px;
+            border: solid 1px #487A6F;
+            float: left;
+        }
+
+        #libook {
+            width: 130px;
+            height: 35px;
+            text-align: center;
+            background-color: #487A6F;
+            color: #FFFFFF;
+            line-height: 35px;
+            font-size: 17px;
+        }
+
+        .lblbookmax {
+            width: 160px;
+            height: 40px;
+            text-align: center;
+            background-color: #487A6F;
+            color: #FFFFFF;
+            line-height: 40px;
+            font-size: 20px;
+     
+            
+        }
+
+        .ulBook li {
+            width: 130px;
+            height: 32.9px;
+            color: #487A6F;
+            border-bottom: groove 0.5px #000000;
+            text-align: center;
+            line-height: 32px;
+            /*font-size: 18px;*/
+            /*font-family:"楷体";*/
+            font-size: 16px;
+            letter-spacing: 2px;   
+        }
+
+        .banner {
+            width: 624px;
+            height: 300px;
+            /*border: solid 1px red;*/
+            margin-left: 12px;
+            margin-right: 12px;
+            float: left;
+            position: relative;
+        }
+
+            .banner .pic {
+                width: 624px;
+                height: 300px;
+                overflow: hidden;
+            }
+
+        li {
+            list-style: none;
+        }
+
+        .banner .pic ul {
+            width: 1000%;
+            /*overflow :hidden ;*/
+            margin-left: -784px;
+        }
+
+            .banner .pic ul li {
+                float: left;
+            }
+
+        .banner .tab {
+            width: 80px;
+            height: 14px;
+            position: absolute;
+            left: 50%;
+            margin-left: -35px;
+            bottom: 1px;
+            /*border: solid 1px red;*/
+            z-index: 1;
+        }
+
+            .banner .tab ul li {
+                width: 10px;
+                height: 10px;
+                border-radius: 100%;
+                background: #D2D2D2;
+                float: left;
+                margin: 3px 3px;
+                cursor: pointer;
+            }
+
+                .banner .tab ul li.on {
+                    background: #f60;
+                }
+
+        .bomBanner ul li.on2 {
+            background: #487A6F;
+        }
+
+        .banner .btn div {
+            width: 26px;
+            height: 40px;
+            background: #EAEAEA;
+            color: #fff;
+            font-size: 26px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+        }
+
+        #laftBtn {
+            left: 5px;
+        }
+
+        #rightBtn {
+            right: 5px;
+        }
+
+        .banner .btn div.hover {
+            background: rgba(0,0,0,0.3);
+        }
+
+        .btn2 div.hover2 {
+            background: rgba(0,0,0,0.3);
+        }
+
+        .banner .btn {
+            display: none;
+        }
+
+        .dynamic {
+            width: 216px;
+            height: 303px;
+            /*position: absolute;*/
+            /*border: solid 1px red;*/
+            float: left;
+            margin-bottom :1px;
+        }
+
+        #ulnewsdy {
+            margin: 5px;
+        }
+
+            #ulnewsdy li {
+                line-height: 25px;
+                color: rgba(0,0,0,1);
+                font-family: '宋体';
+            }
+
+        .newsdy {
+            width: 216px;
+            height: 100px;
+            border: solid 0.5px rgba(0,0,0,0.3);
+            float: left;
+        
+        }
+
+        .newbook {
+            margin-top: 110px;
+            width: 216px;
+            height: 190px;
+            border: solid 1px rgba(0,0,0,0.3);
+            position: relative;
+          
+        }
+
+        .banner2 {
+            margin-top: 10px;
+            width: 130px;
+            height: 130px;
+            /*border: 1px solid yellow;*/
+            position: absolute;
+            left: 50%;
+            margin-left: -65px;
+
+
+        }
+
+        .pic2 {
+            width: 130px;
+            height: 130px;
+            overflow: hidden;
+        }
+
+        .banner2 .pic2 ul {
+            width: 1000%;
+            margin-left: -120px;
+        }
+
+        .bomBanner {
+            margin-top: 142px;
+            width: 216px;
+            height: 23px;
+            /*border: 1px solid #487A6F;*/
+            position: relative;
+        }
+
+            .bomBanner ul {
+                position: absolute;
+                left: 50%;
+                margin-left: -38px;
+                top: 20%;
+            }
+
+                .bomBanner ul li {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 100%;
+                    background: #D2D2D2;
+                    float: left;
+                    margin: 2px 2px;
+                    cursor: pointer;
+                }
+
+                    .bomBanner ul li.on2 {
+                        background: #558c83;
+                    }
+
+        .banner2 .pic2 ul li {
+            float: left;
+        }
+
+        .btn2 div {
+            width: 20px;
+            height: 40px;
+            /*background: #C8C8C8;*/
+            background: #EAEAEA;
+            color: #fff;
+            font-size: 26px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 40px;
+            position: absolute;
+            top: 50%;
+            margin-top: -30px;
+            cursor: pointer;
+        }
+
+        #leftBtn2 {
+            left: 10px;
+        }
+
+        #rightBtn2 {
+            right: 10px;
+        }
+
+        .newArivals {
+            margin: 0 auto;
+            width: 770px;
+            height: 490px;
+            border: solid 1px #EAEAEA;
+            margin-left: 258px;
+            position: relative;
+            float: left;
+        }
+
+            .newArivals .trademark {
+                width: 770px;
+                height: 53px;
+                background-image: url(image/newBook.png);
+                background-size: 100% 100%;
+            }
+
+            .newArivals ul li {
+                float: left;
+                margin-bottom: 30px;
+            }
+
+            .newArivals ul li {
+            }
+
+                .newArivals ul li a, label {
+                    margin-left: 30px;
+                }
+
+        .pic3 {
+            width: 770px;
+            height: 435px;
+            /*border: 1px solid red;*/
+            position: relative;
+            overflow: hidden;
+        }
+
+            .pic3 ul {
+                width: 2900px;
+            }
+
+                .pic3 ul li {
+                    margin-right: 58px;
+                    float: left;
+                }
+
+                    .pic3 ul li img {
+                        background-size: 100% 100%;
+                    }
+
+                    .pic3 ul li label {
+                        margin-top: 5px;
+                        position: absolute;
+                        font-size: 14px;
+                        color: #B7B7B7;
+                    }
+
+                    .pic3  ul li a {
+                        font-size: 15px;
+                    }
+
+            .tab2li ul li.on3 {
+                background: #558c83;
+            }
+            
+
+        .tab2li {
+            position: absolute;
+            width: 80px;
+            height: 18px;
+            /*border: solid 1px red;*/
+            margin-top: -20px;
+            left: 50%;
+            margin-left: -30px;
+        }
+
+            .tab2li ul li {
+                width: 10px;
+                height: 10px;
+                border-radius: 100%;
+                background: #D2D2D2;
+                /*float :left;*/
+                margin: 4px 4px;
+                cursor: pointer;
+            }
+
+        .btn3 div {
+            width: 25px;
+            height: 50px;
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+            background: #EAEAEA;
+            color: #fff;
+            font-size: 26px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+        }
+
+        .leftBtn3 {
+            left: -5px;
+        }
+
+        .rightBtn3 {
+            right: -5px;
+        }
+
+        .listOfTrading {
+            width: 216px;
+            height: 490px;
+            /*border: solid 1px #000000;*/
+            margin-left: 1043px;
+        }
+
+        .login {
+            width: 46px;
+            height: 48px;
+            background-image: url(image/新书交换榜.png);
+            background-size: 100% 100%;
+            float: left;
+            /*border: solid 1px red;*/
+        }
+
+        .lblbt {
+            margin-top :10px;
+            width: 169px;
+            height: 49px;
+            text-align: left;
+            line-height: 66px;
+            /*border: solid 1px red;*/
+            color: #D72832;
+            font-size: 19px;
+            /*font-family :"宋体";*/
+        }
+
+        .tabul {
+            width: 216px;
+            height: 30px;
+            /*border: 1px solid red;*/
+            margin-top: 1px;
+        }
+
+            .tabul ul li {
+                width: 41px;
+                height: 24px;
+                /*border: solid 1px #EAEAEA;*/
+                float: left;
+                text-align: center;
+                line-height: 30px;
+                font-family: "Arial";
+                font-size: 13px;
+            }
+
+        .tabli {
+            width: 216px;
+            height: 410px;
+            border: solid 1px #EAEAEA;
+            margin-top: -5px;
+        }
+
+            .tabli ul {
+                /*height :280px;*/
+            }
+
+                .tabli ul li {
+                    width: 216px;
+                    height: 35px;
+                    /*border: solid 1px #EAEAEA;*/
+                    text-align: left;
+                    line-height: 35px;
+                    font-size: 14px;
+                }
+
+                    .tabli ul li.li1 {
+                        border-top: none;
+                    }
+
+        .press {
+            margin: 0px auto;
+            width: 998px;
+            height: 524px;
+            /*width: 1100px;
+            height: 650px;*/
+            /*border: solid 1px red;*/
+            margin-left: 258px;
+        }
+
+            .press ul li {
+                float: left;
+                cursor: pointer;
+            }
+
+        .tab4 {
+            margin-top: 10px;
+            margin: 0 auto;
+            /*margin-left: 400px;*/
+            width: 750px;
+            height: 55px;
+            /*border: solid 1px red;*/
+        }
+
+            .tab4 ul {
+                margin-top: 35px;
+            }
+
+                .tab4 ul li {
+                    float: left;
+                    /*list-style: none;*/
+                    text-align: center;
+                    width: 70px;
+                    height: 30px;
+                    /*border: solid 1px #C8C8C8;*/
+                    border-bottom: solid 1.1px #558c83;
+                    line-height: 30px;
+                }
+
+                    .tab4 ul li.liname {
+                        border-top: solid 2px #558c83;
+                        border-left: solid 2px #558c83;
+                        border-right: solid 2px #558c83;
+                        border-bottom: none;
+                        border-radius: 6px 6px 0 0;
+                    }
+                
+
+        .picmax div {
+            width: 995px;
+            height: 500px;
+            /*border: solid 1px red;*/
+            /*margin :0px auto;
+            margin-top :-20px;*/
+            float: left;
+        }
+
+
+        .picmax ul li {
+            width: 150px;
+            height: 240px;
+            float: left;
+            margin-right: 47px;
+            /*border: solid 1px red;*/
+        }
+
+        .picmax div ul li a {
+            margin-left: 25px;
+        }
+
+        .picmax div ul li label {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #B7B7B7;
+        }
+
+        .picmax {
+            width: 10000px;
+            height: 700px;
+            /*border: solid 1px yellow;*/
+        }
+
+        .max {
+            width: 995px;
+            height: 480px;
+            overflow: hidden;
+            /*border: solid 1px #487A6F;*/
+            /*margin :0px auto;*/
+            margin-top: 8px;
+            margin-left: 280px;
+        }
+    </style>
+    <style>
+        .re1 {
+            margin-left: 300px;
+            width: 652px;
+            height: 57px;
+            float: left;
+            /*border: solid 1px red;*/
+            /*position :relative ;*/
+        }
+
+        .dp1 {
+            margin-left: 950px;
+            width: 290px;
+            height: 57px;
+            /*border: solid 1px red;*/
+            /*margin: 0 auto;*/
+        }
+
+            .dp1 ul li {
+                margin-top: 20px;
+                list-style: none;
+                width: 90px;
+                height: 36px;
+                float: left;
+                /*border: solid 1px #558c83;*/
+                line-height: 35px;
+                text-align: center;
+                border-bottom: solid 1.3px #558c83;
+            }
+
+                .dp1 ul li.liname2 {
+                    border-top: solid 2px #558c83;
+                    border-left: solid 2px #558c83;
+                    border-right: solid 2px #558c83;
+                    border-bottom: none;
+                    border-radius: 6px 6px 0 0;
+                }
+
+        .readersdiv {
+            width: 1000px;
+            height: 180px;
+            /*border: solid 1px red;*/
+            margin: 0px auto;
+            /*margin-top:25px;*/
+        }
+
+        .dztzbanner1 .readersdiv .reimg {
+            margin-top: 0px;
+            width: 180px;
+            height: 180px;
+            float: left;
+            background-image: url(image/读者推荐好评最多.jpg);
+            background-size: 100% 100%;
+        }
+        .dztzbanner2 .readersdiv .reimg {
+            margin-top: 0px;
+            width: 180px;
+            height: 180px;
+            float: left;
+            background-image: url(image/独家青春10.jpg);
+            background-size: 100% 100%;
+        }
+        .dztzbanner2 .readersdiv .reimg {
+            margin-top: 0px;
+            width: 180px;
+            height: 180px;
+            float: left;
+            background-image: url(image/独家青春3.jpg);
+            background-size: 100% 100%;
+        }
+        .relable {
+            margin-left: 150px;
+            margin-top: 0px;
+            width: 850px;
+            height: 180px;
+            /*border: solid 1px red;*/
+        }
+
+        .dzlunbo {
+            width: 1000px;
+            height: 434px;
+            margin: 0 auto;
+            /*border: solid 1px #558c83;*/
+            /*border: solid 2px #EAEAEA;*/
+            border-top :none ;
+            border-bottom :none ;
+            margin-top: 20px;
+           
+            overflow: hidden;
+        }
+
+        .lunboMax > div .pic13 {
+            border-top: solid 1px #558c83;
+            /*border: solid 1.5px #EAEAEA;*/
+         
+            width: 998px;
+            height: 220px;
+            margin: 0px auto;
+            position: relative;
+            overflow: hidden;
+            /*border :solid  1px;*/
+            cursor: pointer;
+        }
+
+        .lunboMax > div .pic13 ul {
+            width: 1000%;
+            margin-left: -1000px;
+        }
+
+        .lunboMax > div .pic13 ul li {
+            float: left;
+            margin-top: 30px;
+            margin-right: 25px;
+            margin-left: 25px;
+        }
+      
+        .lunboMax {
+            width: 1000%;
+            height: 434px;
+            /*border: solid 1px red;*/
+        }
+        .lunboMax > div {
+            width: 1000px;
+            height: 434px;
+            /*border: solid 1px red;*/
+            float: left;
+        }
+            .lunboMax > div .dztab1 ul {
+                width: 65px;
+                height: 15px;
+                /*border: solid 1px red;*/
+                /*position: absolute;*/
+                left: 50%;
+                margin-left: 467.5px;
+                margin-top: 0px;
+                
+            }
+            
+            .lunboMax > div .dztab1 ul li {
+                cursor: pointer;
+                width: 10px;
+                height: 10px;
+                border-radius: 100%;
+                background: #D2D2D2;
+                float: left;
+                margin: 3px 3px;
+            }
+
+            .lunboMax > div .dzbtn1 div {
+                position: absolute;
+                width: 20px;
+                height: 40px;
+                background-color: #c8c8c8;
+                color: #ffffff;
+                font-size: 26px;
+                text-align: center;
+                line-height: 40px;
+                top: 50%;
+                cursor: pointer;
+             
+            
+            }
+
+            .lunboMax > div .dzbtn1 #dzleftBtn1 {
+                left: 0%;
+            }
+
+            .lunboMax > div .dzbtn1 #dzrightBtn1 {
+                right: 0%;
+            }
+
+            .lunboMax > div .dztab1 ul li.onA {
+                background: #558c83;
+            }
+
+            .lunboMax > div .pic13 ul li label {
+                margin-top: 30px;
+                margin-left: 15px;
+                font-size: 14px;
+               
+            }
+
+            .lunboMax > div .dzbtn1 div.dzhover {
+                background: rgba(0,0,0,0.6);
+            }
+
+    </style>
+    
+</head>
+<body>
+    <form ng-app="appDemo" ng-controller="ctrlDemo">
+        <div ng-include='"masterHead.html"'></div>
+     
+        <div class="book">
+            <div class="bookClassify">
+                <ul class="ulBook">
+                    <li id="libook">
+                        &nbsp;&nbsp; 图书分类&nbsp;&nbsp;&dArr;
+                    </li>
+                    <li>
+                        财经管理
+                    </li>
+                    <li>
+                        军事科学
+                    </li>
+                    <li>
+                        现代哲学
+                    </li>
+                    <li>
+                        计算机
+                    </li>
+                    <li>
+                        武侠小说
+                    </li>
+                    <li>
+                        历史地理
+                    </li>
+                    <li>
+                        青春文学
+                    </li>
+                    <li>
+                        心理学
+                    </li>
+
+                </ul>
+            </div>
+            <div class="banner">
+                <div class="pic">
+                    <ul>
+                        <li><a href=""> <img src="image/5.jpg" style="width:100%;height :100%;" /></a></li>
+                        <li><a href=""> <img src="image/1.jpg" style="width:100%;height :100%;" /></a></li>
+                        <li><a href=""> <img src="image/2.jpg" style="width:100%;height :100%;" /></a></li>
+                        <li><a href=""> <img src="image/3.jpg" style="width:100%;height :100%;" /></a></li>
+                        <li><a href=""> <img src="image/4.jpg" style="width:100%;height :100%;" /></a></li>
+                        <li><a href=""> <img src="image/5.jpg" style="width:100%;height :100%;" /></a></li>
+                        <li><a href=""> <img src="image/1.jpg" style="width:100%;height :100%;" /></a></li>
+                    </ul>
+                </div>
+                <div class="tab">
+                    <ul>
+                        <li class="on"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="btn">
+                    <div id="laftBtn">&lt;</div>
+                    <div id="rightBtn">&gt;</div>
+
+                </div>
+            </div>
+            <div class="dynamic">
+                <div class="newsdy">
+                    <ul id="ulnewsdy">
+                        <li style="text-align :left;font-size :18px;   color: rgba(0,0,0,1);">
+                            最新动态
+                        </li>
+
+                        <li>
+                            &bull;习近平谈治国理政
+                        </li>
+                        <li>
+
+                            &bull; 文艺分会场，竞价
+                        </li>
+
+                        <li>
+                            &bull;生活分会场，竞价
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="newbook">
+                    <hr />
+                    <label style="margin-left:10px;">新书预售</label> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="font-size:12px;color :#5198BD;">预售更多</a>
+
+                    <div class="banner2">
+                        <div class="pic2">
+                            <ul>
+                                <li><a href=""><img src="image/预售5.jpg" style="width:100%;height:100%;" /></a></li>
+                                <li><a href=""><img src="image/预售一.jpg" style="width:100%;height:100%;" /></a></li>
+                                <li><a href=""><img src="image/预售2.jpg" style="width:100%;height:100%;" /></a></li>
+                                <li><a href=""><img src="image/预售3.jpg" style="width:100%;height:100%;" /></a></li>
+                                <li><a href=""><img src="image/预售4.jpg" style="width:100%;height:100%;" /></a></li>
+                                <li><a href=""><img src="image/预售5.jpg" style="width:100%;height:100%;" /></a></li>
+                                <li><a href=""><img src="image/预售一.jpg" style="width:100%;height:100%;" /></a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bomBanner">
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="btn2">
+                        <div id="leftBtn2">&lt;</div>
+                        <div id="rightBtn2">&gt;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="newArivals">
+            <div class="trademark"></div>
+            <div class="pic3">
+                <ul>
+                    <li><img src="image/新书1.jpg" /><br /><a>时光本草周历</a><br /><label>老梁</label></li>
+                    <li><img src="image/新书2.jpg" /><br /><a>三国演义</a><br /><label>吴荣庆</label></li>
+                    <li><img src="image/新书3.jpg" /><br /><a>水浒传</a><br /><label>吴日冲</label></li>
+                    <li><img src="image/新书4.jpg" /><br /><a>水浒传</a><br /><label>吴日冲</label></li>
+                    <li><img src="image/新书5.jpg" /><br /><a>水浒传</a><br /><label>吴日冲</label></li>
+                    <li><img src="image/新书6.jpg" /><br /><a>三国演义</a><br /><label style="">吴荣庆</label></li>
+                    <li><img src="image/新书7.jpg" /><br /><a>三国演义</a><br /><label>吴荣庆</label></li>
+                    <li><img src="image/新书9.jpg" /><br /><a>三国演义</a><br /><label>吴荣庆</label></li>
+                    <li><img src="image/新书10.jpg" /><br /><a>三国演义</a><br /><label>吴荣庆</label></li>
+                    <li><img src="image/新书11.jpg" /><br /><a>三国演义</a><br /><label>吴荣庆</label></li>
+                    <li><img src="image/新书12.jpg" /><br /><a>三国演义</a><br /><label>吴荣庆</label></li>
+                    <li><img src="image/新书13.jpg" /><br /><a>三国演义</a><br /><label>吴荣庆</label></li>
+                    <li><img src="image/新书14.jpg" /><br /><a>三国演义</a><br /><label>吴荣庆</label></li>
+                    <li><img src="image/新书15.jpg" /><br /><a>三国演义</a><br /><label>吴荣庆</label></li>
+                    <li><img src="image/新书16.jpg" /><br /><a>三国演义</a><br /><label>吴荣庆</label></li>
+                    <li><img src="image/新书17.jpg" /><br /><a>三国演义</a><br /><label>吴荣庆</label></li>
+                    <li><img src="image/新书18.jpg" /><br /><a>三国演义</a><br /><label>吴荣庆</label></li>
+                    <li><img src="image/新书19.jpg" /><br /><a>三国演义</a><br /><label>吴荣庆</label></li>
+                    <li><img src="image/新书20.jpg" /><br /><a>三国演义</a><br /><label>吴荣庆</label></li>
+                    <li><img src="image/新书21.jpg" /><br /><a>三国演义</a><br /><label>吴荣庆</label></li>
+                    <li><img src="image/新书22.jpg" /><br /><a>三国演义</a><br /><label>吴荣庆</label></li>
+                    <li><img src="image/新书23.jpg" /><br /><a>三国演义</a><br /><label>吴荣庆</label></li>
+                    <li><img src="image/新书24.jpg" /><br /><a>三国演义</a><br /><label>吴荣庆</label></li>
+                    <li><img src="image/新书25.jpg" /><br /><a>三国演义</a><br /><label>吴荣庆</label></li>
+                    <li><img src="image/新书26.jpg" /><br /><a>三国演义</a><br /><label>吴荣庆</label></li>
+                    <li><img src="image/新书27.jpg" /><br /><a>三国演义</a><br /><label>吴荣庆</label></li>
+
+                </ul>
+            </div>
+            <div class="btn3">
+                <div class="leftBtn3">&lt;</div>
+                <div class="rightBtn3">&gt;</div>
+            </div>
+            <div class="tab2li">
+                <ul>
+                    <li class="on3"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div class="listOfTrading">
+            <div class="login"></div>
+            <div class="lblbt"><a>新书热销榜</a></div>
+            <div class="tabul">
+                <ul>
+
+                    <li>总榜</li>
+                    <li>小说</li>
+                    <li>文学</li>
+                    <li>青春</li>
+                    <li>励志</li>
+                </ul>
+            </div>
+            <div class="tabli">
+                <ul>
+                    <li><label style="color:red; margin-left:18px;font-size:18px;">1</label>&nbsp;&nbsp;&nbsp;达脸(当当专享签名)</li> 
+                    <li><label style="color:red; margin-left:18px;font-size:18px;">2</label>&nbsp;&nbsp;&nbsp;学会爱自己(第一辑)</li>
+                    <li><label style="color:red; margin-left:18px;font-size:18px;">3</label>&nbsp;&nbsp;&nbsp;不可不知的科</li>
+                    <li><label style="margin-left:18px;font-size:18px;">4</label>&nbsp;&nbsp;&nbsp;你的能力要会用故事讲</li>
+                    <li><label style="margin-left:18px;font-size:18px;">5</label>&nbsp;&nbsp;&nbsp;愿所有相遇，都恰逢时 </li>
+                    <li><label style="margin-left:18px;font-size:18px;">6</label>&nbsp;&nbsp;&nbsp;孩子的诗，诗不在远方</li>
+                    <li><label style="margin-left:18px;font-size:18px;">7</label>&nbsp;&nbsp;&nbsp;孩子的诗，诗不在远方</li>
+                    <li><label style="margin-left:18px;font-size:18px;">8</label>&nbsp;&nbsp;&nbsp;不可不知的科</li>
+
+                </ul>
+            </div>
+        </div>
+        <div style="margin-left :246px; margin-top:10px; margin-bottom:5px; font-size:20px;color :red;font-family:宋体">
+            <label>各社好书，任你挑选</label>
+        </div>
+        <div class="press">
+            <ul>
+                <li><img src="image/出版社5.jpg" /></li>
+                <li><img src="image/出版社2.jpg" /></li>
+                <li><img src="image/出版社3.jpg" /></li>
+                <li><img src="image/出版社4.jpg" /></li>
+                <li><img src="image/出版社1.jpg" /></li>
+                <li><img src="image/出版社11.jpg" /> </li>
+                <li><img src="image/出版社7.jpg" /> </li>
+                <li><img src="image/出版社8.jpg" /> </li>
+                <li><img src="image/出版社9.jpg" /> </li>
+                <li><img src="image/出版社10.jpg" /> </li>
+            </ul>
+        </div>
+        <div style="margin-left: 345px;border :none;width:142px;height:55px;margin-top :10px;float:left;">
+            <img src="image/独家提供.png" />
+        </div>
+        <div class="tab4">
+            <ul>
+                <li class="liname">主打</li>
+                <li>童书1</li>
+                <li>童书2</li>
+                <li>文艺</li>
+                <li>青春励志</li>
+                <li>社科</li>
+                <li>经营</li>
+                <li>生活</li>
+                <li>教育</li>
+            </ul>
+        </div>
+        <div class="max">
+            <div class="picmax">
+                <div class="pic4">
+                    <ul class="ul1">
+                        <li><img src="image/独家主打1.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家主打2.jpg" /><br /><a>时光</a><br /><label>老梁</label> </li>
+                        <li><img src="image/独家主打3.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家主打4.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家主打5.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家主打6.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家主打7.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家主打8.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家主打9.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家主打10.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                    </ul>
+                </div>
+                <div class="pic5">
+                    <ul>
+                        <li><img src="image/独家童书一1.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家童书一2.jpg" /><br /><a>时光</a><br /><label>老梁</label> </li>
+                        <li><img src="image/独家童书一3.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家童书一4.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家童书一5.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家童书一6.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家童书一7.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家童书一8.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家童书一9.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家童书一10.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                    </ul>
+                </div>
+                <div class="pic6">
+                    <ul>
+                        <li><img src="image/独家童书二1.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家童书二2.jpg" /><br /><a>时光</a><br /><label>老梁</label> </li>
+                        <li><img src="image/独家童书二3.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家童书二4.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家童书二5.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家童书二6.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家童书二7.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家童书二8.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家童书二9.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家童书二10.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                    </ul>
+                </div>
+                <div class="pic7">
+                    <ul>
+                        <li><img src="image/独家文艺1.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家文艺2.jpg" /><br /><a>时光</a><br /><label>老梁</label> </li>
+                        <li><img src="image/独家文艺3.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家文艺4.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家文艺5.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家文艺6.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家文艺7.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家文艺8.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家文艺9.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家文艺10.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                    </ul>
+                </div>
+                <div class="pic8">
+                    <ul>
+                        <li><img src="image/独家青春1.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家青春2.jpg" /><br /><a>时光</a><br /><label>老梁</label> </li>
+                        <li><img src="image/独家青春3.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家青春4.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家青春5.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家青春6.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家青春7.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家青春8.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家青春9.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家青春10.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                    </ul>
+                </div>
+                <div class="pic9">
+                    <ul>
+                        <li><img src="image/独家社科1.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家社科2.jpg" /><br /><a>时光</a><br /><label>老梁</label> </li>
+                        <li><img src="image/独家社科3.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家社科4.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家社科5.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家社科6.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家社科7.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家社科8.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家社科9.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家社科10.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                    </ul>
+                </div>
+                <div class="pic10">
+                    <ul>
+                        <li><img src="image/独家1.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家2.jpg" /><br /><a>时光</a><br /><label>老梁</label> </li>
+                        <li><img src="image/独家3.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家4.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家5.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家6.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家7.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家8.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家9.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家10.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                    </ul>
+                </div>
+                <div class="pic11">
+                    <ul>
+                        <li><img src="image/独家生活1.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家生活2.jpg" /><br /><a>时光</a><br /><label>老梁</label> </li>
+                        <li><img src="image/独家生活3.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家生活4.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家生活5.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家生活6.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家生活7.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家生活8.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家生活9.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家生活10.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                    </ul>
+                </div>
+                <div class="pic12">
+                    <ul>
+                        <li><img src="image/独家教育1.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家教育2.jpg" /><br /><a>时光</a><br /><label>老梁</label> </li>
+                        <li><img src="image/独家教育3.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家教育4.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家教育5.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家教育6.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家教育7.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家教育8.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家教育9.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                        <li><img src="image/独家教育10.jpg" /><br /><a>时光本草</a><br /><label>老梁</label></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="re1"><img src="image/读者推荐.png" /></div>
+        <div class="dp1">
+            <ul>
+                <li class="liname2">好评最多</li>
+                <li>交换最多</li>
+                <li>人气收藏</li>
+            </ul>
+        </div>
+        <div class="dzlunbo">
+            <div class="lunboMax">
+                <div class="dztzbanner1">
+                    <div class="readersdiv">
+                        <div class="reimg">
+                        </div>
+                        <div class="relable">
+                            <a style="margin:0 auto ;"><b>岛上书店(每个人的,都有无比艰难的那一年，将人生变得美好而辽阔)</b></a><br />
+                            <br />
+                            <label style="font-size :13px;color:#666666;">岛上书店是间维多利亚风格的小屋，门廊上挂着褪色的招牌，上面写着：没有谁是一座孤岛，每本书都是一个世界A．J．费克里，人近中年，在一座与世隔绝的小岛上，经营一家书店。命运从未眷顾过他，爱妻去世，书店危机，就连*值钱的宝贝也遭窃。他的人生陷入僵局，他的内心沦为荒岛。就在此时，一个神秘的包袱出现在书店中，意外地拯救了陷于孤独绝境中的A．J．，成为了连接他和妻姐伊斯梅、警长兰比亚斯、出版社女业务员阿米莉娅之间的纽带，为他的生活带来了转机。小岛上的几个生命紧紧相依，走出了人生的困境，而所有对书和生活的热爱都周而复始，愈加汹涌。</label>
+
+                        </div>
+                    </div>
+                    <div class="pic13">
+                        <ul>
+                            <li><img src="image/好评最多17.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多18.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多19.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多20.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多21.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多2.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多3.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多4.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多5.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多6.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多7.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多8.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多9.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多10.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多11.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多12.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多13.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多14.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多15.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多16.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多17.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多18.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多19.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多20.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多21.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多2.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多3.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多4.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多5.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/好评最多6.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+
+
+                        </ul>
+                        <div class="dzbtn1">
+                            <div id="dzleftBtn1">&lt;</div>
+                            <div id="dzrightBtn1">&gt;</div>
+                        </div>
+                    </div>
+                    <div class="dztab1">
+                        <ul>
+                            <li class="onA"></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="dztzbanner2">
+                    <div class="readersdiv">
+                        <div class="reimg">
+                        </div>
+                        <div class="relable">
+                            <a style="margin:0 auto ;"><b>岛上书店(每个人的,都有无比艰难的那一年，将人生变得美好而辽阔)</b></a><br />
+                            <br />
+                            <label style="font-size :13px;color:#666666;">岛上书店是间维多利亚风格的小屋，门廊上挂着褪色的招牌，上面写着：没有谁是一座孤岛，每本书都是一个世界A．J．费克里，人近中年，在一座与世隔绝的小岛上，经营一家书店。命运从未眷顾过他，爱妻去世，书店危机，就连*值钱的宝贝也遭窃。他的人生陷入僵局，他的内心沦为荒岛。就在此时，一个神秘的包袱出现在书店中，意外地拯救了陷于孤独绝境中的A．J．，成为了连接他和妻姐伊斯梅、警长兰比亚斯、出版社女业务员阿米莉娅之间的纽带，为他的生活带来了转机。小岛上的几个生命紧紧相依，走出了人生的困境，而所有对书和生活的热爱都周而复始，愈加汹涌。</label>
+
+                        </div>
+                    </div>
+                    <div class="pic13">
+                        <ul>
+                            <li><img src="image/最受关注17.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最受关注18.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最受关注19.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最受关注20.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最受关注21.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最多关注2.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最多关注3.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最多关注4.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最多关注5.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最多关注6.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最受关注7.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最受关注8.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最受关注9.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最受关注10.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最受关注11.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最受关注12.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最受关注13.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最受关注14.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最受关注15.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最受关注16.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最受关注17.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最受关注18.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最受关注19.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最受关注20.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最受关注21.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最多关注2.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最多关注3.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最多关注4.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最多关注5.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/最多关注6.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+
+
+                        </ul>
+                        <div class="dzbtn1">
+                            <div id="dzleftBtn1">&lt;</div>
+                            <div id="dzrightBtn1">&gt;</div>
+                        </div>
+                    </div>
+                    <div class="dztab1">
+                        <ul>
+                            <li class="onA"></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="dztzbanner3">
+                    <div class="readersdiv">
+                        <div class="reimg">
+                        </div>
+                        <div class="relable">
+                            <a style="margin:0 auto ;"><b>岛上书店(每个人的,都有无比艰难的那一年，将人生变得美好而辽阔)</b></a><br />
+                            <br />
+                            <label style="font-size :13px;color:#666666;">岛上书店是间维多利亚风格的小屋，门廊上挂着褪色的招牌，上面写着：没有谁是一座孤岛，每本书都是一个世界A．J．费克里，人近中年，在一座与世隔绝的小岛上，经营一家书店。命运从未眷顾过他，爱妻去世，书店危机，就连*值钱的宝贝也遭窃。他的人生陷入僵局，他的内心沦为荒岛。就在此时，一个神秘的包袱出现在书店中，意外地拯救了陷于孤独绝境中的A．J．，成为了连接他和妻姐伊斯梅、警长兰比亚斯、出版社女业务员阿米莉娅之间的纽带，为他的生活带来了转机。小岛上的几个生命紧紧相依，走出了人生的困境，而所有对书和生活的热爱都周而复始，愈加汹涌。</label>
+
+                        </div>
+                    </div>
+                    <div class="pic13">
+                        <ul>
+                            <li><img src="image/人气收藏17.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏18.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏19.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏20.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏21.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏2.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏3.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏4.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏5.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏6.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏7.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏8.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏9.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏10.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏11.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏12.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏13.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏14.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏15.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏16.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏17.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏18.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏19.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏20.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏21.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏2.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏3.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏4.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏5.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                            <li><img src="image/人气收藏6.jpg" /><br /><label>跟乐嘉学性格色彩</label></li>
+                        </ul>
+                        <div class="dzbtn1">
+                            <div id="dzleftBtn1">&lt;</div>
+                            <div id="dzrightBtn1">&gt;</div>
+                        </div>
+                    </div>
+                    <div class="dztab1">
+                        <ul>
+                            <li class="onA"></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>    
+        <div ng-include='"masterBottom.html"'></div>
+        </form>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script src="angular/angular.js"></script>
+<script src="js/include.js"></script>
+<script src="js/broadcaString.js"></script>
+<script type="text/javascript">
+
+    $(function () {
+        var $pic = $('.banner');
+        var $tabLi = $('.banner .tab li');
+        var $picUl = $('.banner .pic ul');
+        var $bannar = $('.banner')
+        var $btn = $('.banner .btn');
+        var $btnDiv = $('.banner .btn div');
+        var imgWidth = $('.banner .pic li').width();
+        carousel($tabLi, 'on', $picUl, imgWidth, 500, 0, 3000, $pic, $btn, $btnDiv, 'hover', 'yes','true');
+    
+        var $tabli2 = $('.bomBanner   li');
+        var $picUi2 = $('.pic2  ul');
+        var $btn2 = $('.btn2')
+        var $btn2Div = $('.btn2  div')
+        var imgWidth2 = $('.pic2 li').width();
+        carousel($tabli2, 'on2', $picUi2, imgWidth2, 500, 0, 3000, 'no', $btn2, $btn2Div, 'hover2', 'no');
+
+
+       
+        var $dzpic = $('.dztzbanner1 .pic13');
+        var $dztabli = $(".dztzbanner1 .dztab1 ul li ");
+        var $dzpicUl = $(".dztzbanner1 .pic13 ul");
+        var $imgwidth = 1000;
+        var $dzbtn = $(".dztzbanner1  .pic13  .dzbtn1");
+        var $dzbtnDiv = $(".dztzbanner1  .pic13  .dzbtn1 div");    
+        carousel($dztabli, 'onA', $dzpicUl, $imgwidth, 500, 0, 3000, $dzpic, $dzbtn, $dzbtnDiv, 'dzhover', 'yes','no');
+
+        var $dzpic2 = $('.dztzbanner2 .pic13');
+        var $dztabli2 = $(".dztzbanner2 .dztab1 ul li ");
+        var $dzpicUl2 = $(".dztzbanner2 .pic13 ul");
+        var $imgwidth2 = 1000;
+        var $dzbtn2 = $(".dztzbanner2  .pic13  .dzbtn1");
+        var $dzbtnDiv2 = $(".dztzbanner2  .pic13  .dzbtn1 div");
+        carousel($dztabli2, 'onA', $dzpicUl2, $imgwidth, 500, 0, 3000, $dzpic2, $dzbtn2, $dzbtnDiv2, 'dzhover', 'yes','no');
+        
+        var $dzpic3 = $('.dztzbanner3 pic13');
+        var $dztabli3 = $(".dztzbanner3 .dztab1 ul li ");
+        var $dzpicUl3 = $(".dztzbanner3 .pic13 ul");
+        var $imgwidth2 = 1000;
+        var $dzbtn3 = $(".dztzbanner3  .pic13  .dzbtn1");
+        var $dzbtnDiv3 = $(".dztzbanner3  .pic13  .dzbtn1 div");
+        carousel($dztabli3, 'onA', $dzpicUl3, $imgwidth, 500, 0, 3000, $dzpic3, $dzbtn3, $dzbtnDiv3, 'dzhover', 'yes','no');
+    });
+    $(function () {
+        var $tabli3 = $(".tab2li ul  li");
+        var $picUi3 = $(".pic3  ul");
+        var $btnDiv3 = $(".btn3  div");
+        var imgWidth3 = 620; /*$('.pic3 li').width();*/
+        var nowTime3 = new Date();
+        var index3 = 0;
+        $tabli3.hover(function () {
+            index3 = $(this).index();
+            //$tabli3.eq(index3).addClass('on3').siblings().removeClass('on3');
+             $(this).addClass('on3').siblings().removeClass('on3');
+            $picUi3.animate({
+                marginLeft: -imgWidth3 * (index3) + 'px'
+            }, 170);
+        });
+        $btnDiv3.hover(function () {
+            $(this).addClass("hover3");
+        }, function () {
+            $(this).removeClass('hover3');
+            }).click(function () {
+          if (new Date - nowTime3 > 500) {
+              nowTime3 = new Date();
+              var i = $(this).index();
+              i ? index3++ : index3--;
+              var liIndex = index3;
+              $tabli3.eq(index3).addClass('on3').siblings().removeClass('on3');
+                    
+              $picUi3.animate({
+                marginLeft: -imgWidth3 * (index3) + 'px'
+              }, 500, function () {
+                 if (index3 == $tabli3.length) {
+                 $picUi3.css('marginLeft',0 + 'px');
+                 index3 = 0;
+                 $tabli3.eq(index3).addClass('on3').siblings().removeClass('on3');
+
+                      }
+                   else if (index3 < 0) {
+                     $picUi3.css('marginLeft', -imgWidth3 * ($tabli3.length-1) + 'px');
+                       index3 = $tabli3.length;
+
+                        }
+                    });
+                }
+            }
+            );
+    });
+    $(function () {
+        var $tabli4 = $(".tab4 li");
+        var $picUi4 = $(".picmax");
+        var $btnDiv3 = $(".btn3  div");
+        var imgWidth4 = 995; /*$('.pic3 li').width();*/
+        var nowTime3 = new Date();
+        var index4 = 0;
+        var $liname = 'liname';
+        lb($tabli4, $picUi4, imgWidth4, $liname);
+    });
+    $(function () {
+        var $tabli = $(".dp1 ul li");
+        var $picul = $(".lunboMax");
+        var imgwidht = $(".dzlunbo").width();
+        var $liname = 'liname2';
+
+        lb($tabli, $picul, imgwidht, $liname);
+
+    })
+    function lb($tabli, $picUi, $imgWidth, $liname) {
+        var index = 0;
+        $tabli.hover(function () {
+            index = $(this).index();
+            $(this).addClass($liname).siblings().removeClass($liname);
+            $picUi.animate({
+                marginLeft: -$imgWidth * (index) + 'px'
+            }, 0);
+        });
+    };
+    $(function () {
+    });
+</script>
+<script>
+    //$("div").css("border", "none");
+    //$(".max").css("border", "none")
+    //$(".max *").css("border", "none")
+    $(".selct").css({ "margin-left": "70px" });
+    $(".tabul  ul  li").hover(function () {
+       
+
+        $(this).css({ "border-bottom": "none", "border-top": "solid  2px   #487A6F", "color": "#487A6F", "text-decoration": "underline", "font-size": "14px" })
+    }, function () {
+
+        $(this).css({ "border-bottom": "solid  1px #EAEAEA", "border-top": "solid 1px #EAEAEA", "color": "", "text-decoration": "none", "font-size": "13px" })
+        });
+    $(".tabli  ul  li").hover(function () {
+        $(this).css({ "height": "130px", "background-image": "url(image/新书1.jpg)", "background-size":"50% 100%"})
+    }, function () {
+        $(this).css({ "height": "41px", "background-image": "none" })
+        })
+    $(".press ul  li").hover(function () {
+        $(this).css({ "border-left": "solid 1px #487A6F", "border-right": "solid 1px #487A6F"});
+    }, function () {
+        $(this).css({"border": "none" });
+        });
+</script>

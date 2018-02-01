@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--width=device-width：布局视口宽度 与 可见视口宽度(即屏幕宽度)相同。
+    初始缩放比例为1
+    最大缩放比例为1
+    不允许用户缩放-->
+    <meta name="viewport" content="
+          width=device-width,
+          intial-scale=1.0,
+          minmum-scale=1.0,
+          maximum-scale=1.0,
+          user-scaleble=no" /> 
+    <style >
+        *{
+            margin:0;
+            padding :0;
+        }
+        .shopCar  ul li {
+            list-style :none ;
+            margin-right :95px;
+            float :left ;
+           
+        }
+        .shopCar {
+            width: 1000px;
+            height: 40px;
+            /*border :solid  1px red;*/
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 40px;
+            background-color: #E5E5E5;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        .imgShopCar
+        {
+            margin-top :20px;
+            width:600px;
+            height :38px;
+            margin-left :258px;
+           
+
+            
+        }
+        .shopCarDesc {
+            width: 1000px;
+            height: 600px;
+            /*border :solid 1px red;*/
+            margin: 0 auto;
+         
+        }
+            .shopCarDesc li {
+                border-radius: 8px;
+                height: 100px;
+                border: solid 2px #808080;
+               
+                border-top :0px;
+            }
+                .shopCarDesc li:nth-child(1) {
+                    border-top: solid 2px #808080;
+                }
+                .shopCarDesc li:nth-child(2n) {
+                    /*background-color: #E5E5E5;*/
+                    /*color :orangered;*/
+                }
+           .shopCarDesc  li  div{
+               float :left ;
+               /*border :solid 1px red;*/
+               text-align :center;
+           }
+            .shopCarDesc li div:nth-child(1) {
+             
+                width: 30px;
+                height: 100px;
+                line-height: 100px;
+                margin: 0 auto;
+            }
+            .shopCarDesc li div:nth-child(2) {
+                width: 100px;
+                height: 100px;
+            }
+            .shopCarDesc li div:nth-child(3) {
+                width: 100px;
+                height: 100px;
+                margin-left: 40px;
+                line-height: 100px;
+            }
+            .shopCarDesc li div:nth-child(4) {
+                width: 100px;
+                height: 100px;
+                margin-left: 40px;
+                line-height: 100px;
+            }
+            .shopCarDesc li div:nth-child(5) {
+                width: 100px;
+                height: 100px;
+                margin-left: 40px;
+                line-height: 100px;
+            }
+            .shopCarDesc li div:nth-child(6) {
+                width: 100px;
+                height: 100px;
+                margin-left: 70px;
+                line-height: 100px;
+                text-decoration: underline red;
+            
+                font-size :16px;
+            }
+            .shopCarDesc li div:nth-child(7) {
+                width: 100px;
+                height: 100px;
+                margin-left: 30px;
+                line-height: 100px;
+            }
+        .shopping {
+            width: 1000px;
+            height: 50px;
+            /*border :solid  1px  red;*/
+            background-color: #E5E5E5;
+            margin: 0 auto;
+            margin-top: -150px;
+            border-radius: 12px;
+            margin-bottom:30px;
+        }
+            .shopping  div{
+                float :left ;
+                line-height :50px;
+            }
+        .check {
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top :4px;
+        }
+        .btnjh {
+            margin-left: 0px;
+        }
+        .lblcount {
+            margin-left: 670px;
+            margin-right :10px;
+        }
+        .btnjh .button {
+            background-color: red;
+            width: 140px;
+            height :50px;
+            border: none;
+            color: white;
+            /*padding :15px  32px;*/
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+            letter-spacing: 2px;
+            margin-top :0px;
+        }
+    </style>
+</head>
+<body>
+    <form ng-app="appDemo" ng-controller="ctrlDemo">
+        <div ng-include='"masterHead.html"'></div>
+        <div class="imgShopCar">
+            <img style="width:100%;height :100%; "  src="image/我的购物车.png" />
+        </div>
+        <div class="shopCar">   
+           <ul>
+               <li style="margin-left:20px;"><input  type="checkbox" style="font-size :25px; width:17px; height :17px;"  />&nbsp;&nbsp;&nbsp;<label >全选</label></li>
+               <li><label >图书名称</label></li>
+               <li><label>作者</label></li>
+               <li><label >上架人</label></li>
+               <li><label >交换的图书</label></li>
+        
+
+           </ul>
+            <label style="margin-left :-40px;">操作</label>
+        </div>
+        <div class="shopCarDesc">
+              <ul>
+                  <!--<li><div><input type="checkbox" style="width:17px; height :17px;" /></div><div><img style="width:100%;height:100%;" src="image/人气收藏4.jpg" /></div><div><label>少有人走的路</label></div><div><label>梁少</label></div><div><label>梁林明</label></div><div><a>请选择图书</a></div><div><label>移除</label></div></li>
+                  <li><div><input type="checkbox" style="width:17px; height :17px;" /></div><div><img style="width:100%;height:100%;" src="image/人气收藏3.jpg" /></div><div><label>少有人走的路</label></div><div><label>梁少</label></div><div><label>梁林明</label></div><div><a>请选择图书</a></div><div><label>移除</label></div></li>
+                  <li><div><input type="checkbox" style="width:17px; height :17px;" /></div><div><img style="width:100%;height:100%;" src="image/人气收藏11.jpg" /></div><div><label>少有人走的路</label></div><div><label>梁少</label></div><div><label>梁林明</label></div><div><a>请选择图书</a></div><div><label>移除</label></div></li>
+                  <li><div><input type="checkbox" style="width:17px; height :17px;" /></div><div><img style="width:100%;height:100%;" src="image/人气收藏12.jpg" /></div><div><label>少有人走的路</label></div><div><label>梁少</label></div><div><label>梁林明</label></div><div><a>请选择图书</a></div><div><label>移除</label></div></li>-->
+              </ul>
+        </div>
+        <div class="shopping">
+            <div class="check">
+                <input  type="checkbox"  style="width:17px;height :17px;" />
+            </div>
+            <div class="lblcheck"><label>全选</label></div>
+            <div class="lblcount"><label>已选择1本书</label></div>
+            <div class="btnjh"> <a href="#" class="button" >立即交换</a></div>
+        </div>
+        <div ng-include='"masterBottom.html"'></div>
+    </form>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script src="angular/angular.js"></script>
+<script src="js/include.js"></script>
+<script >
+   
+    $(function () {
+        $.post("ShopCarList", function (data) {
+        
+            for (var i = 0; i <= data.length; i++) {
+                $(".shopCarDesc ul").append('<li><div><input type="checkbox" style="width:17px; height :17px;" /></div><div><img style="width:100%;height:100%;" src="image/' + data[i].Title + '.jpg" /></div><div><label>' + data[i].Title + '</label></div><div><label>' + data[i].Author + '</label></div><div><label>' + data[i].Title + '</label></div><div><a>请选择图书</a></div><div><label>移除</label></div></li>');
+            }
+        })
+       
+    })
+   
+</script>

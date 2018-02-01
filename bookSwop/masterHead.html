@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+    <style >
+
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+
+        li {
+            list-style: none;
+        }
+
+        body {
+            margin: auto 0; /*/居中*/
+            font-size: 1rem; /*相对根元素*/
+        }
+
+        .showUI {
+            width: 1000px;
+            height: 150px;
+            margin: 10px auto;
+            display: block;
+        }
+
+        .img {
+            position: relative;
+            top: 50px;
+            width: 130px;
+            right: 190px;
+        }
+
+        .img2 {
+            margin-top: -50px;
+            margin-left: -30px;
+            width: 80px;
+            height: 80px;
+        }
+
+        .head1 {
+            display: inline;
+            /*margin: 60% auto   ;*/
+            position: absolute;
+            top: 1px;
+            /*left:68%;*/
+            width: 1000px;
+            text-align: right;
+            background-color: #F9F9F9;
+            color: #646464;
+            font-family: "宋体";
+            /*border:ridge; 1px #cfc9c9;*/
+        }
+
+        .head2 {
+            width: 20%;
+            margin: 0 auto;
+            height: 26px;
+            white-space: nowrap; /*不换行*/
+            margin-top: -3.4%;
+            position: relative;
+            left: -200px;
+        }
+
+        #txtSearch {
+            border: solid 2px red;
+            /*取消右边框*/
+            border-right: none;
+            /*左浮动,让文本框与按钮对齐*/
+            float: left;
+            font-size: 15px;
+            padding-left: 10px;
+            /*margin-bottom: 10px;*/
+            height: 150%;
+            width: 170%;
+            margin-top: -35px;
+            margin-left: 100PX;
+        }
+
+        #btnSearch, ::after {
+            /*按钮图片路径*/
+            background-image: url("image/搜索图标.png");
+            /*让图片适应按钮大小*/
+            background-size: 100% 100%;
+            /*边框*/
+            border: solid 1px #ff6a00;
+            /*按钮的宽度*/
+            width: 18%;
+            /*取消左边框*/
+            border-left: none;
+            /*左浮动与文本框对齐*/
+            /* float:left;*/
+            /*文字大小*/
+            font-size: 15px;
+            height: 150%;
+            cursor: pointer;
+            position: absolute;
+            margin-top: -35px;
+        }
+
+        #btnShopCat {
+            width: 50px;
+            height: 45px;
+            background-size: 100% 100%;
+            background-image: url("image/购物车图片.png");
+            float: left;
+            border: none;
+        }
+
+        .shpCar {
+            float: left;
+            margin-top: -40px;
+            margin-left: -60px;
+            /*border:solid  1px red;*/
+        }
+
+        #name {
+            color: #ffffff;
+            width: 75px;
+            height: 45px;
+            float: left;
+            background-color: #E50112;
+            text-align: left;
+            /*vertical-align:middle ;*/
+            line-height: 45px;
+        }
+
+        #btnOrder {
+            font-family: "宋体";
+            width: 80px;
+            height: 45px;
+            font-size: 18px;
+        }
+
+        .selct {
+            position: absolute;
+            margin-left: 103px;
+            margin-top: 5px;
+            font-size: 14px;
+            font-family: "宋体";
+            color: #969696;
+            width:360px;
+           
+        }
+        .selct  label {
+            margin-left :0px;
+        }
+
+        #lbl1 {
+            color: #ff0000;
+            font-family: '宋体';
+            /*position :absolute;*/
+            margin-left: 0px;
+        }
+
+        .nav {
+            margin-top: -30px;
+            width: 1000px;
+            height: 40px;
+            /*background-color :#F5F5F5;*/
+            /*border  :solid 1px  red;*/
+            margin: 0 auto;
+            border-bottom: 2px solid red;
+            padding-top: 20px;
+        }
+
+        #nav1 li {
+            float: left;
+            list-style: none;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 25px;
+            /*margin-top :50px;*/
+        }
+
+    </style>
+
+<body>
+    <div class="showUI">
+        <div class="head1">
+            <label>欢迎易书网,请</label>
+            <a style="color:red;">登陆</a>
+            <a>上架图书|</a>
+            <a>交易信息|</a>
+            <a>小说投稿|</a>
+            <a>客户服务</a>
+        </div>
+
+        <div class="head2">
+            <div class="img">
+                <img src="image/图书5.jpg" width="100px" height="100px" />
+            </div>
+            <div class="img2">
+                <img src="image/二维码3.png" style="width :100% ;height :100%;" />
+                <br /><label id="lbl1">APP首单送书</label>
+            </div>
+            <input type="search" id="txtSearch" placeholder="搜索" /> <input type="button" id="btnSearch" />
+            <div class="selct">
+                <label>热搜:</label> <a>武动乾坤</a> <a>大主宰</a> <a>龙血战神</a>
+            </div>
+        </div>
+
+        <div class="shpCar">
+            <input type="button" id="btnShopCat" />
+            <a id="name">购物车<b style="font:#ffffff">0</b></a>
+            <input type="button" id="btnOrder" value="我的订单" />
+        </div>
+
+    </div>
+    <div class="nav">
+        <ul id="nav1">
+            <li style=" text-align :center;width :130px;height :40px ; background-color:#ff0000; line-height :40px;color :#ffffff;font-family :'宋体';font-size :16px;">
+                <a>&nbsp;图书排行榜&nbsp;&nbsp;&nbsp;&nbsp;></a>
+            </li>
+            <li>
+                <a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;童书</a>
+            </li>
+            <li>
+                <a>教辅</a>
+            </li>
+            <li>
+                <a>小说</a>
+            </li>
+            <li>
+                <a>文学</a>
+            </li>
+            <li>
+                <a>青春文学</a>
+            </li>
+            <li>
+                <a>传记</a>
+            </li>
+            <li>
+                <a>成功励志</a>
+            </li>
+        </ul>
+    </div>
+</body>
